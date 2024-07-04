@@ -18,7 +18,8 @@
     "lint": "biome lint . --apply-unsafe",
     "playground": "pnpm --filter playgrounds/default dev",
     "preconstruct": "bun run scripts/preconstruct.ts",
-    "prepare": "pnpm install && pnpm build",
+    "prepare": "simple-git-hooks",
+    "install": "pnpm build",
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
@@ -47,7 +48,7 @@
     "vocs": "workspace:*"
   },
   "simple-git-hooks": {
-    "pre-commit": "pnpm format && pnpm lint && pnpm run build"
+    "pre-commit": "pnpm format && pnpm lint"
   },
   "packageManager": "pnpm@9.1.0",
   "engines": {
