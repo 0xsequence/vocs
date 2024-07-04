@@ -15,9 +15,20 @@ jobs:
    steps:
     - name: git-checkout
       uses: actions/checkout@v4
-
+    
     - name: Install dependencies
-      uses: ./.github/actions/install-dependencies
+      run: |
+        npm install -g pnpm@9.1.0
+
+    - name: Set up Node
+      uses: actions/setup-node@v3
+      with:
+        cache: pnpm
+        node-version: 20
+
+    - name: Install modules
+      run: |
+        pnpm install
     
     - name: Build
       run: pnpm build
