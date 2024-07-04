@@ -19,7 +19,6 @@
     "playground": "pnpm --filter playgrounds/default dev",
     "preconstruct": "bun run scripts/preconstruct.ts",
     "prepare": "simple-git-hooks",
-    "install": "pnpm install && pnpm build",
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
