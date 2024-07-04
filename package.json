@@ -47,7 +47,7 @@
     "vocs": "workspace:*"
   },
   "simple-git-hooks": {
-    "pre-commit": "pnpm format && pnpm lint"
+    "pre-commit": "pnpm format && pnpm lint && pnpm run build"
   },
   "packageManager": "pnpm@9.1.0",
   "engines": {
