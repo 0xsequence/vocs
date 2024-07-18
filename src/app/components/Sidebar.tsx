@@ -221,11 +221,9 @@ function SidebarItem(props: {
               ) : (
                 <div
                   className={clsx(
-                    depth === 0
-                      ? item.items && checkSectionTitleActive(item.items, pathname)
-                        ? styles.sectionTitleActive
-                        : styles.sectionTitle
-                      : styles.item,
+                    item.items && checkSectionTitleActive(item.items, pathname)
+                      ? styles.sectionTitleActive
+                      : styles.sectionTitle,
                   )}
                 >
                   {item.items && !checkSectionTitleActive(item.items, pathname) && collapsed ? (
