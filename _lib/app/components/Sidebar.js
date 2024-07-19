@@ -121,9 +121,11 @@ function SidebarItem(props) {
                             onKeyDown: onCollapseInteraction,
                         }
                         : {}), children: [item.text &&
-                            (item.link ? (_jsx(RouterLink, { "data-active": Boolean(match), onClick: onClick, className: clsx(depth === 0 ? [styles.sectionTitle, styles.sectionTitleLink] : styles.item, hasActiveChildItem && styles.sectionHeaderActive), to: item.link, children: item.text })) : (_jsx("div", { className: clsx(item.items && checkSectionTitleActive(item.items, pathname)
-                                    ? styles.sectionTitleActive
-                                    : styles.sectionTitle), children: item.items && !checkSectionTitleActive(item.items, pathname) && collapsed ? (_jsx(RouterLink, { "data-active": false, onClick: onClick, to: item.items[0].link, children: item.text })) : (item.text) }))), isCollapsable && (_jsx("div", { role: "button", tabIndex: 0, onClick: onCollapseTriggerInteraction, onKeyDown: onCollapseTriggerInteraction, children: _jsx(Icon, { className: clsx(styles.sectionCollapse, collapsed && styles.sectionCollapseActive), label: "toggle section", icon: ChevronRight, size: "10px" }) }))] })), !collapsed && (_jsx("div", { className: clsx(styles.items, depth !== 0 && styles.levelInset), children: item.items &&
+                            (item.link ? (_jsx(RouterLink, { "data-active": Boolean(match), onClick: onClick, className: clsx(depth === 0 ? [styles.sectionTitle, styles.sectionTitleLink] : styles.item, hasActiveChildItem && styles.sectionHeaderActive), to: item.link, children: item.text })) : (_jsx("div", { className: clsx(depth === 0
+                                    ? item.items && checkSectionTitleActive(item.items, pathname)
+                                        ? styles.sectionTitleActive
+                                        : styles.sectionTitle
+                                    : styles.item), children: item.items && !checkSectionTitleActive(item.items, pathname) && collapsed ? (_jsx(RouterLink, { "data-active": false, onClick: onClick, to: item.items[0].link, children: item.text })) : (item.text) }))), isCollapsable && (_jsx("div", { role: "button", tabIndex: 0, onClick: onCollapseTriggerInteraction, onKeyDown: onCollapseTriggerInteraction, children: _jsx(Icon, { className: clsx(styles.sectionCollapse, collapsed && styles.sectionCollapseActive), label: "toggle section", icon: ChevronRight, size: "10px" }) }))] })), !collapsed && (_jsx("div", { className: clsx(styles.items, depth !== 0 && styles.levelInset), children: item.items &&
                         item.items.length > 0 &&
                         depth < 5 &&
                         item.items.map((item, i) => (_jsx(SidebarItem, { depth: depth + 1, item: item, onClick: onClick, sidebarRef: sidebarRef }, `${item.text}${i}`))) }))] }));
