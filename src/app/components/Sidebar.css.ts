@@ -163,6 +163,25 @@ export const item = style(
   'item',
 )
 
+export const itemActive = style(
+  {
+    color: primitiveColorVars.textAccent,
+    letterSpacing: '0.25px',
+    lineHeight: lineHeightVars.sidebarItem,
+    width: '100%',
+    transition: 'color 0.1s',
+    selectors: {
+      '&:hover': {
+        color: primitiveColorVars.text,
+      },
+      '&[data-active="true"]': {
+        color: primitiveColorVars.textAccent,
+      },
+    },
+  },
+  'itemActive',
+)
+
 export const sectionHeader = style(
   {
     alignItems: 'center',
