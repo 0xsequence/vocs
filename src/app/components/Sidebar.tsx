@@ -221,7 +221,7 @@ function SidebarItem(props: {
               ) : (
                 <div
                   className={clsx(
-                    depth <= 1
+                    depth === 0
                       ? item.items && checkSectionTitleActive(item.items, pathname)
                         ? styles.sectionTitleActive
                         : styles.sectionTitle
