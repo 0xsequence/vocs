@@ -225,6 +225,8 @@ function SidebarItem(props: {
                       ? item.items && checkSectionTitleActive(item.items, pathname)
                         ? styles.sectionTitleActive
                         : styles.sectionTitle
+                      : item.items && checkSectionTitleActive(item.items, pathname)
+                      ? styles.itemActive
                       : styles.item,
                   )}
                 >
