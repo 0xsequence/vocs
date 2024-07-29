@@ -11,6 +11,7 @@ export declare const levelCollapsed: string;
 export declare const levelInset: string;
 export declare const items: string;
 export declare const item: string;
+export declare const itemActive: string;
 export declare const sectionHeader: string;
 export declare const sectionHeaderActive: string;
 export declare const sectionTitle: string;
