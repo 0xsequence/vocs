@@ -1,5 +1,65 @@
 # vocs
 
+## 1.0.0-alpha.61
+
+### Patch Changes
+
+- [`ad56fc7`](https://github.com/wevm/vocs/commit/ad56fc78e6d6d5c232b100c5ea6db048e27679ae) Thanks [@jxom](https://github.com/jxom)! - Fixed search index for pages that include relative imports.
+
+## 1.0.0-alpha.60
+
+### Patch Changes
+
+- [`6ebc071`](https://github.com/wevm/vocs/commit/6ebc071e13f68d3ba69fdc8761c10fa6a3f02753) Thanks [@jxom](https://github.com/jxom)! - Fixed inline code highlighter.
+
+- [`13db87c`](https://github.com/wevm/vocs/commit/13db87c1eeabe0f7cbccbdada70f95ea14c5908f) Thanks [@jxom](https://github.com/jxom)! - Updated dependencies.
+
+- [`13db87c`](https://github.com/wevm/vocs/commit/13db87c1eeabe0f7cbccbdada70f95ea14c5908f) Thanks [@jxom](https://github.com/jxom)! - Fixed copy button not displaying on code snippets.
+
+## 1.0.0-alpha.59
+
+### Patch Changes
+
+- [`91640f9`](https://github.com/wevm/vocs/commit/91640f9ca5f307a59337a73475ad4603e4e201ad) Thanks [@jxom](https://github.com/jxom)! - Defauled Twoslash to throw on syntax errors, and added a `// @noErrors` tag to disable this behavior.
+
+## 1.0.0-alpha.58
+
+### Patch Changes
+
+- [`d29b41e`](https://github.com/wevm/vocs/commit/d29b41ee5599679777f78a577987b1f577c6e000) Thanks [@jxom](https://github.com/jxom)! - Expand collapsed sidebar items when they have a link and are pressed.
+
+## 1.0.0-alpha.57
+
+### Patch Changes
+
+- [`daab75e`](https://github.com/wevm/vocs/commit/daab75edcc3546236751d7e40defd5139570c466) Thanks [@jxom](https://github.com/jxom)! - Fixed location match for collapsed sidebars.
+
+## 1.0.0-alpha.56
+
+### Patch Changes
+
+- [`1d02a16`](https://github.com/wevm/vocs/commit/1d02a166e14771259198d69e68897cd4d25cf7c6) Thanks [@jxom](https://github.com/jxom)! - Fixed location match for collapsed sidebars.
+
+## 1.0.0-alpha.55
+
+### Patch Changes
+
+- [`4a888ea`](https://github.com/wevm/vocs/commit/4a888eadf7136fa4d45ce8818a3a4be96aa27434) Thanks [@jxom](https://github.com/jxom)! - Fixed top nav search bar ↔ item gap.
+
+## 1.0.0-alpha.54
+
+### Patch Changes
+
+- [`66a0390`](https://github.com/wevm/vocs/commit/66a0390c97b82581b2ea49c5aa440b1a7b848ace) Thanks [@jxom](https://github.com/jxom)! - Fixed excessive \`createHighlighter\` instantiation.
+
+## 1.0.0-alpha.53
+
+### Patch Changes
+
+- [`7b49059`](https://github.com/wevm/vocs/commit/7b490595316be2618b5d8220735ebca984883efe) Thanks [@jxom](https://github.com/jxom)! - Updated dependencies.
+
+- [`879f297`](https://github.com/wevm/vocs/commit/879f297e5cfaceb592044802b85bf4d179842fbd) Thanks [@jxom](https://github.com/jxom)! - Allow navigable sidebar section header.
+
 ## 1.0.0-alpha.52
 
 ### Patch Changes
