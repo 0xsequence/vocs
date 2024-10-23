@@ -24,7 +24,7 @@ export async function buildIndex({ baseDir, }) {
         const pageCache = cache.search.get(key) ?? {};
         if (pageCache.mdx === mdx)
             return pageCache.document;
-        const html = await processMdx(mdx);
+        const html = await processMdx(pagePath, mdx);
         const sections = splitPageIntoSections(html);
         if (sections.length === 0) {
             cache.search.set(key, { mdx, document: [] });
@@ -67,10 +67,10 @@ export function saveIndex(outDir, index) {
 }
 const remarkPlugins = getRemarkPlugins();
 const rehypePlugins = getRehypePlugins({ twoslash: false });
-export async function processMdx(file) {
+export async function processMdx(filePath, file) {
     try {
         const compiled = await compile(file, {
-            baseUrl: pathToFileURL(file).href,
+            baseUrl: pathToFileURL(filePath).href,
             outputFormat: 'function-body',
             remarkPlugins,
             rehypePlugins,

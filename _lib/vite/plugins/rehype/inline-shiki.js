@@ -1,13 +1,13 @@
-import { bundledLanguages, getHighlighter } from 'shiki';
+import { bundledLanguages, getSingletonHighlighter } from 'shiki';
 import { visit } from 'unist-util-visit';
 const inlineShikiRegex = /(.*){:(.*)}$/;
+let promise;
 export const rehypeInlineShiki = function (options = {}) {
     const themeNames = ('themes' in options ? Object.values(options.themes) : [options.theme]).filter(Boolean);
     const langs = options.langs || Object.keys(bundledLanguages);
-    let promise;
     return async function (tree) {
         if (!promise)
-            promise = getHighlighter({
+            promise = getSingletonHighlighter({
                 themes: themeNames,
                 langs,
             });

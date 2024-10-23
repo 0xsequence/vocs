@@ -5,7 +5,7 @@ export declare function buildIndex({ baseDir, }: {
     baseDir: string;
 }): Promise<MiniSearch<any>>;
 export declare function saveIndex(outDir: string, index: MiniSearch): any;
-export declare function processMdx(file: string): Promise<string>;
+export declare function processMdx(filePath: string, file: string): Promise<string>;
 export declare function getDocId(baseDir: string, file: string): string;
 type PageSection = {
     anchor: string;

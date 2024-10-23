@@ -4,6 +4,7 @@ import { borderRadiusVars, contentVars, primitiveColorVars, sidebarVars, spaceVa
 export const root = style({
     alignItems: 'center',
     display: 'flex',
+    gap: spaceVars[8],
     justifyContent: 'space-between',
     padding: `0 ${topNavVars.horizontalPadding}`,
     height: topNavVars.height,
@@ -56,7 +57,13 @@ export const icon = style({
         },
     },
 }, 'icon');
-export const item = style({ alignItems: 'center', display: 'flex', height: '100%', position: 'relative' }, 'item');
+export const item = style({
+    alignItems: 'center',
+    display: 'flex',
+    height: '100%',
+    position: 'relative',
+    whiteSpace: 'nowrap',
+}, 'item');
 export const logo = style({
     paddingLeft: sidebarVars.horizontalPadding,
     paddingRight: sidebarVars.horizontalPadding,

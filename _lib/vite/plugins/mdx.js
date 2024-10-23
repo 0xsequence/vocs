@@ -57,6 +57,10 @@ export const getRemarkPlugins = ({ markdown } = {}) => [
     remarkAuthors,
     ...(markdown?.remarkPlugins || []),
 ];
+const defaultThemes = {
+    dark: 'github-dark-dimmed',
+    light: 'github-light',
+};
 export const getRehypePlugins = ({ markdown, rootDir = '', twoslash = {}, } = {}) => [
     rehypeSlug,
     [
@@ -80,6 +84,7 @@ export const getRehypePlugins = ({ markdown, rootDir = '', twoslash = {}, } = {}
                         twoslashOptions: {
                             ...twoslash,
                             customTags: [
+                                'allowErrors',
                                 ...(defaultTwoslashOptions.customTags ?? []),
                                 ...(twoslash.customTags ?? []),
                             ],
@@ -92,14 +97,17 @@ export const getRehypePlugins = ({ markdown, rootDir = '', twoslash = {}, } = {}
                     : null,
                 transformerSplitIdentifiers(),
             ].filter(Boolean),
-            themes: {
-                dark: 'github-dark-dimmed',
-                light: 'github-light',
-            },
+            themes: defaultThemes,
             ...markdown?.code,
         },
     ],
-    [rehypeInlineShiki, markdown?.code],
+    [
+        rehypeInlineShiki,
+        {
+            themes: defaultThemes,
+            ...markdown?.code,
+        },
+    ],
     rehypeShikiDisplayNotation,
     [
         rehypeAutolinkHeadings,

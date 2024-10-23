@@ -7,7 +7,7 @@ export function remarkCode() {
             if (node.type !== 'code')
                 return;
             if (!node.lang)
-                node.lang = 'txt';
+                node.lang = 'markdown';
             if (parent?.type === 'containerDirective' && parent.name !== 'steps')
                 return;
             const [match, title] = node.meta?.match(/\[(.*)\]/) || [];

@@ -70,10 +70,10 @@ function SidebarItem(props) {
     const { depth, item, onClick, sidebarRef } = props;
     const itemRef = useRef(null);
     const { pathname } = useLocation();
-    const match = useMatch(item.link ?? '');
+    const match = useMatch(item.link || '');
     const hasActiveChildItem = useMemo(() => (item.items ? Boolean(getActiveChildItem(item.items, pathname)) : false), [item.items, pathname]);
     const [collapsed, setCollapsed] = useState(() => {
-        if (match)
+        if (item.link && match)
             return false;
         if (!item.items)
             return false;
@@ -85,17 +85,13 @@ function SidebarItem(props) {
     const onCollapseInteraction = useCallback((event) => {
         if ('key' in event && event.key !== 'Enter')
             return;
-        if (item.link)
-            return;
         setCollapsed((x) => !x);
-    }, [item.link]);
+    }, []);
     const onCollapseTriggerInteraction = useCallback((event) => {
         if ('key' in event && event.key !== 'Enter')
             return;
-        if (!item.link)
-            return;
         setCollapsed((x) => !x);
-    }, [item.link]);
+    }, []);
     const active = useRef(true);
     useEffect(() => {
         if (!active.current)
@@ -121,7 +117,10 @@ function SidebarItem(props) {
                             onKeyDown: onCollapseInteraction,
                         }
                         : {}), children: [item.text &&
-                            (item.link ? (_jsx(RouterLink, { "data-active": Boolean(match), onClick: onClick, className: clsx(depth === 0 ? [styles.sectionTitle, styles.sectionTitleLink] : styles.item, hasActiveChildItem && styles.sectionHeaderActive), to: item.link, children: item.text })) : (_jsx("div", { className: clsx(depth === 0
+                            (item.link ? (_jsx(RouterLink, { "data-active": Boolean(match), onClick: (e) => {
+                                    onClick?.(e);
+                                    onCollapseInteraction(e);
+                                }, className: clsx(depth === 0 ? [styles.sectionTitle, styles.sectionTitleLink] : styles.item, hasActiveChildItem && styles.sectionHeaderActive), to: item.link, children: item.text })) : (_jsx("div", { className: clsx(depth === 0
                                     ? item.items && checkSectionTitleActive(item.items, pathname)
                                         ? styles.sectionTitleActive
                                         : styles.sectionTitle

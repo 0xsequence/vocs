@@ -12,6 +12,8 @@ export function twoslasher(...parameters) {
         return twoslash;
     }
     catch (e) {
+        if (!parameters[0].includes('@allowErrors'))
+            throw e;
         const error = e;
         const lines = parameters[0].split('\n');
         const line = lines.length - 1;

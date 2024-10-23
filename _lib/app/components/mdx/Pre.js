@@ -31,6 +31,6 @@ export function Pre({ children, className, ...props }) {
             return (_jsxs(CodeBlock, { children: [props['data-title'] && (_jsx(CodeTitle, { language: props['data-lang'], children: props['data-title'] })), children] }));
         return children;
     };
-    return wrap(_jsx("div", { className: clsx(styles.wrapper), children: _jsxs("pre", { ref: ref, ...props, className: clsx(className, styles.root), children: ['data-language' in props && _jsx(CopyButton, { copied: copied, copy: copy }), children_] }) }));
+    return wrap(_jsx("div", { className: clsx(styles.wrapper), children: _jsxs("pre", { ref: ref, ...props, className: clsx(className, styles.root), children: [_jsx(CopyButton, { copied: copied, copy: copy }), children_] }) }));
 }
 //# sourceMappingURL=Pre.js.map
