@@ -64,7 +64,7 @@ export function DesktopTopNav() {
             <div
               className={clsx(
                 styles.divider,
-                (config.topNav?.length || 0) > 3 ? styles.hideCompact : null,
+                (Array.isArray(config.topNav) ? config.topNav.length : 0) > 3 ? styles.hideCompact : null,
               )}
             />
           </>
@@ -87,7 +87,7 @@ export function DesktopTopNav() {
             <div
               className={clsx(
                 styles.group,
-                (config.topNav?.length || 0) > 3 ? styles.hideCompact : null,
+                (Array.isArray(config.topNav) ? config.topNav.length : 0) > 3 ? styles.hideCompact : null,
               )}
               style={{ marginLeft: '-8px', marginRight: '-8px' }}
             >
